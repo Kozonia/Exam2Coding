@@ -3,8 +3,8 @@
 
 Itinerary::Itinerary()
 {
-	numCities = 5;
-	cities = new City[numCities];
+	numCities = 0;
+	cities = nullptr;
 }
 
 Itinerary::Itinerary(City* cities, int numCities)
@@ -51,15 +51,15 @@ void Itinerary::setCities(City* cities, int numCities)
 
 void Itinerary::addCity(City city)
 {
-	numCities++;
-	City* newCities = new City[numCities];
+	City* newCities = new City[numCities + 1];
 	for (int i = 0; i < numCities; i++)
 	{
 		newCities[i] = cities[i];
 	}
-	newCities[numCities - 1] = city;
-
+	newCities[numCities] = city;
+	delete[] cities;
 	cities = newCities;
+	numCities++;
 }
 
 double Itinerary::getDistance(City orig, City dest)
@@ -73,7 +73,7 @@ double Itinerary::getDistance(City orig, City dest)
 double Itinerary::getTotalDistance()
 {
 	double totalDistance = 0;
-	for (int i = 0; i < numCities; i++)
+	for (int i = 0; i < numCities - 1; i++)
 	{
 		totalDistance += getDistance(cities[i], cities[i+1]);
 	}
@@ -83,12 +83,11 @@ double Itinerary::getTotalDistance()
 
 Itinerary& Itinerary::operator+(Itinerary& right)
 {
-	this->numCities += right.numCities;
-	for (int i = 0; i < numCities; i++)
-	{
-		addCity(right.cities[numCities - right.numCities]);
-	}
 
+	for (int i = 0; i < right.numCities; i++)
+	{
+		addCity(right.cities[i]);
+	}
 	return *this;
 }
 

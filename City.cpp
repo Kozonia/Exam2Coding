@@ -3,9 +3,9 @@
 
 City::City()
 {
-	name = "Conway";
-	latitude = 35.0518;
-	longitude = 92.4367;
+	name = " ";
+	latitude = 0;
+	longitude = 0;
 }
 
 City::City(string name, double lat, double lon)
