@@ -4,11 +4,12 @@
 using namespace std;
 
 void testMovie();
+void testItinerary();
 
 int main()
 {
 	testMovie();
-
+	testItinerary();
 
 
 	return 0;
@@ -29,6 +30,10 @@ void testMovie()
 
 	cout << Movie1 << endl;
 	cout << Movie2 << endl;
-
 	
+}
+
+void testItinerary()
+{
+
 }

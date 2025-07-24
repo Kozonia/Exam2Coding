@@ -25,20 +25,24 @@ string City::getName()
 	return name;
 }
 
-double City::getLatitude()
+double City::getLat()
 {
 	return latitude;
 }
 
-double City::getLongitude()
+double City::getLong()
 {
 	return longitude;
 }
 
 City& City::operator=(const City& right)
 {
-	this->name = right.name;
-	this->latitude = right.latitude;
-	this->longitude = right.longitude;
-	return *this;
+	if (this != &right)
+	{
+		this->name = right.name;
+		this->latitude = right.latitude;
+		this->longitude = right.longitude;
+		return *this;
+	}
+
 }

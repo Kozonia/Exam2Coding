@@ -13,8 +13,8 @@ public:
 	City(string name, double lat, double lon);
 	void setName(string name);
 	string getName();
-	double getLatitude();
-	double getLongitude();
+	double getLat();
+	double getLong();
 	City& operator=(const City& right);
 };
 #endif

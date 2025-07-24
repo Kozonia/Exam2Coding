@@ -125,11 +125,13 @@
   <ItemGroup>
     <ClCompile Include="City.cpp" />
     <ClCompile Include="Exam2.cpp" />
+    <ClCompile Include="Itinerary.cpp" />
     <ClCompile Include="Movie.cpp" />
     <ClCompile Include="Person.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="City.h" />
+    <ClInclude Include="Itinerary.h" />
     <ClInclude Include="Movie.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>
